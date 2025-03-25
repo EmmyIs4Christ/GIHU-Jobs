@@ -14,7 +14,7 @@ import { useState } from "react";
 
 function Header({ user, profileInfo }) {
   const router = useRouter();
-  const pathname = usePathname()
+  const pathname = usePathname();
   const [errorMsg, setErrorMsg] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState({
     mobile: false,
@@ -40,29 +40,26 @@ function Header({ user, profileInfo }) {
         mobile: false,
         desktop: false,
       });
-      router.push('/sign-in');
+      router.push("/sign-in");
     } else {
       setErrorMsg("Failed to log out");
     }
   };
-// console.log(pathname,);
-const headerTitle = menuItems.filter((item) => item.path === pathname)[0]?.label;
+  // console.log(pathname,);
+  const headerTitle = menuItems.filter((item) => item.path === pathname)[0]
+    ?.label;
 
-if(user) {
-const expirationTime = user?.expires - Date.now();
-  setTimeout(() => {
-     router.push("/sign-in");
-  }, expirationTime)
-}
+  if (user) {
+    const expirationTime = user?.expires - Date.now();
+    setTimeout(() => {
+      router.push("/sign-in");
+    }, expirationTime);
+  }
 
   return (
     <>
       <head>
         <link rel="icon" href="/images/My favicon Ima.ico" />
-        <meta
-          name="google-site-verification"
-          content="5LdhfrfbVQUv7cJeDGoaM_1FJFhRveU-9KhtbRk9_qA"
-        />
         <title>{`GIHU JOBS   ${headerTitle ? "~" + headerTitle : ""}`}</title>
       </head>
       <header className="flex h-16 w-full shrink-0 items-center">

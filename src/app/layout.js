@@ -5,7 +5,6 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { Toaster } from "@/components/ui/toaster";
 import Head from "next/head";
-import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +24,16 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="5LdhfrfbVQUv7cJeDGoaM_1FJFhRveU-9KhtbRk9_qA"
+        />
+        <meta
+          name="description"
+          content="GIHU Jobs, One Stop Solution to Finding Jobs"
+        />
+      </Head>
       <body
         className={`${geistSans.variable} bg-gradient-to-br from-gray-300 to-blue-600 ${geistMono.variable} antialiased`}
       >

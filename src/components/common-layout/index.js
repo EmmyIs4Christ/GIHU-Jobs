@@ -4,6 +4,7 @@ import Header from "../header";
 import { cookies } from "next/headers";
 import Footer from "../footer";
 import { fetchProfileAction } from "@/app/actions";
+import Head from "next/head";
 
 async function CommonLayout({ children }) {
   const getCookies = await cookies();
@@ -14,6 +15,7 @@ async function CommonLayout({ children }) {
 
   return (
     <>
+     
       <div className="mx-auto max-w-7xl p-6 lg:px-8">
         <main className="min-h-[85vh]">
           <Header
